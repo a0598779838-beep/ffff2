@@ -439,10 +439,110 @@ footer span { color: var(--gold); }
   .content { padding: 75px 18px; }
   .card { padding: 27px 18px; }
 }
+
+/* عدّاد الخطبة وقوانيننا */
+.engagement-countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+.time-unit {
+  background: #0c0b0a;
+  border: 1px solid #d8b66d66;
+  border-radius: 14px;
+  padding: 16px 8px;
+}
+.time-unit strong {
+  display: block;
+  color: var(--gold2);
+  font-size: clamp(25px, 6vw, 38px);
+  font-weight: 800;
+  direction: ltr;
+}
+.time-unit span {
+  display: block;
+  color: #bfb3b0;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.rules-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+  text-align: right;
+}
+.rule-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid #b18c4c55;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #1b1714, #0c0b0a);
+  color: #d8cec7;
+  line-height: 2;
+}
+.rule-item .rule-number {
+  color: var(--gold);
+  font-weight: 800;
+  min-width: 28px;
+}
+@media(max-width:420px) {
+  .engagement-countdown { gap: 6px; }
+  .time-unit { padding: 13px 4px; }
+  .time-unit span { font-size: 10px; }
+}
+
+
+/* إضافات رومانسية */
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:28px}
+.feature-card{background:linear-gradient(145deg,#211812,#100d0b);border:1px solid #d8b66d66;border-radius:20px;padding:24px 18px;text-align:center;cursor:pointer;transition:.3s}
+.feature-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 12px 35px #d8b66d22}
+.feature-card .emoji{font-size:34px;margin-bottom:10px}
+.feature-card h3{font-family:'Aref Ruqaa Ink',serif;color:var(--gold2);font-size:25px;margin-bottom:8px}
+.feature-card p{color:#cfc2ba;line-height:2;font-size:14px}
+.feature-action{margin-top:14px;background:linear-gradient(120deg,#f0d69b,#b58a40);color:#17100a;border:0;border-radius:30px;padding:10px 20px;font-weight:800;cursor:pointer}
+.feature-output{display:none;margin-top:18px;padding:22px;border:1px solid #d8b66d66;border-radius:18px;background:#17120f;color:#f6dfa6;line-height:2.4;animation:appear .5s ease}
+.love-quiz{display:grid;gap:12px;margin-top:18px}
+.quiz-option{background:#211812;border:1px solid #8a7658;color:#f5e7d0;padding:12px;border-radius:13px;font-family:inherit;cursor:pointer}
+.quiz-option:hover{border-color:var(--gold)}
+.quiz-feedback{min-height:32px;color:var(--gold2);margin-top:12px}
+.future-note{font-family:'Aref Ruqaa Ink',serif;font-size:23px;color:var(--gold2);line-height:2.2}
+@media(max-width:500px){.feature-card{padding:20px 14px}}
+
+
+/* تطوير بصري تفاعلي مع الحفاظ على المحتوى والوظائف الأصلية */
+:root{--glass:rgba(255,255,255,.075);--glass-border:rgba(246,223,166,.28);--day-bg:#fff7f2;--day-text:#392b32}
+body{background:radial-gradient(ellipse at 15% 10%,#35202d 0,transparent 38%),radial-gradient(ellipse at 85% 35%,#182b35 0,transparent 38%),var(--black);background-attachment:fixed;transition:background .35s,color .35s}
+body:before{content:"";position:fixed;inset:-50%;z-index:0;pointer-events:none;background:conic-gradient(from 0deg,transparent,#d8b66d0c,transparent,#e99bb10c,transparent);animation:ambient 32s linear infinite}
+@keyframes ambient{to{transform:rotate(360deg)}}
+.card,.feature-card,.secret,.counter-box,.rule-item,.feature-output,.result-card{backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.025));border-color:var(--glass-border);box-shadow:0 16px 48px #0002,inset 0 1px 0 #ffffff12}
+.hero{background:radial-gradient(ellipse at center,rgba(110,62,68,.45),rgba(17,12,20,.86) 72%)}
+.heading,.hero h1,.hero .sub,.card h3,.feature-card h3,.secret h3{ text-wrap:balance }
+.toolbar{position:fixed;z-index:120;top:14px;left:14px;display:flex;gap:8px;direction:ltr}
+.toolbar button{border:1px solid #d8b66d88;background:#17120fbb;color:#f6dfa6;border-radius:30px;padding:10px 13px;font:700 13px Cairo,sans-serif;cursor:pointer;backdrop-filter:blur(12px)}
+body.day-mode{--black:#fff7f2;color:#392b32;background:radial-gradient(ellipse at 15% 10%,#ffe3ed,transparent 40%),radial-gradient(ellipse at 85% 35%,#dff5f1,transparent 42%),#fffaf6;background-attachment:fixed}
+body.day-mode .hero,body.day-mode .final{background:radial-gradient(ellipse at center,#ffe8dc,#fff7f2 75%)}
+body.day-mode .hero h1,body.day-mode .heading,body.day-mode .final h2,body.day-mode .card h3,body.day-mode .feature-card h3,body.day-mode .secret h3,body.day-mode .counter-box h3{color:#92536c;text-shadow:none}
+body.day-mode .hero .sub,body.day-mode .hero p,body.day-mode .description,body.day-mode .card p,body.day-mode .memory p,body.day-mode .feature-card p,body.day-mode .final p,body.day-mode .rule-item,body.day-mode .memory h3{color:#59434b}
+body.day-mode .card,body.day-mode .feature-card,body.day-mode .secret,body.day-mode .counter-box,body.day-mode .rule-item,body.day-mode .feature-output{background:rgba(255,255,255,.64);border-color:#d9a8b9aa;box-shadow:0 14px 40px #8d536b13}
+body.day-mode .time-unit{background:#fff1f5;border-color:#d9a8b9}body.day-mode .time-unit strong{color:#92536c}body.day-mode .time-unit span{color:#765e67}
+.welcome-screen{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:radial-gradient(circle at center,#432735f5,#09080dfc 70%);transition:opacity .7s,visibility .7s}
+.welcome-screen.dismissed{opacity:0;visibility:hidden;pointer-events:none}.welcome-card{max-width:570px;padding:clamp(28px,6vw,54px);border:1px solid #d8b66d88;border-radius:30px;background:rgba(255,255,255,.07);backdrop-filter:blur(20px);box-shadow:0 20px 80px #0006}.welcome-card .big-heart{font-size:54px;animation:heartBeat 1.8s infinite}.welcome-card h2{font:700 clamp(38px,9vw,65px) 'Aref Ruqaa Ink',serif;color:var(--gold2);margin:12px}.welcome-card p{line-height:2.3;color:#eadbd0}
+@keyframes heartBeat{0%,100%{transform:scale(1)}15%{transform:scale(1.16)}30%{transform:scale(1)}}
+.new-feature-section{padding-top:35px!important}.envelope-wrap{display:grid;place-items:center;padding:20px 0 8px}.envelope{position:relative;width:min(310px,80vw);height:190px;border:0;background:transparent;cursor:pointer;perspective:700px;filter:drop-shadow(0 16px 18px #0004)}.env-body{position:absolute;inset:30px 0 0;background:linear-gradient(140deg,#c77d91,#8f455e);border-radius:9px 9px 15px 15px;overflow:hidden}.env-body:before,.env-body:after{content:"";position:absolute;bottom:0;width:0;height:0;border-style:solid;z-index:2}.env-body:before{left:0;border-width:0 0 130px 160px;border-color:transparent transparent #e5a9b5 transparent}.env-body:after{right:0;border-width:130px 0 0 160px;border-color:transparent transparent transparent #b86780}.env-flap{position:absolute;z-index:4;top:30px;left:0;width:0;height:0;border-left:155px solid transparent;border-right:155px solid transparent;border-top:105px solid #f0c1c9;transform-origin:top;transition:transform .7s;filter:drop-shadow(0 3px 2px #71334933)}.envelope.opened .env-flap{transform:rotateX(180deg);z-index:1}.letter-paper{position:absolute;z-index:3;left:8%;top:43px;width:84%;min-height:100px;padding:15px 12px;background:#fff8ed;color:#794456;border-radius:8px;line-height:1.9;transform:translateY(0);transition:transform .7s;opacity:0}.envelope.opened .letter-paper{opacity:1;transform:translateY(-65px)}.env-heart{position:absolute;z-index:5;left:calc(50% - 18px);top:85px;font-size:35px;transition:opacity .3s}.envelope.opened .env-heart{opacity:0}
+.scratch-area{position:relative;max-width:430px;height:190px;margin:20px auto;border-radius:18px;overflow:hidden;border:1px solid #d8b66d66;background:linear-gradient(135deg,#fff0d1,#e4a2b5);touch-action:pan-y}.scratch-reveal{position:absolute;inset:0;display:grid;place-items:center;padding:20px;text-align:center;color:#71334a;font:700 24px 'Aref Ruqaa Ink',serif;line-height:2}.scratch-area canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}.wheel-shell{position:relative;width:min(330px,80vw);margin:24px auto}.wheel-pointer{position:absolute;z-index:2;top:-7px;left:calc(50% - 15px);width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-top:28px solid #f6dfa6;filter:drop-shadow(0 2px 2px #0006)}#loveWheel{width:100%;display:block;transition:transform 4s cubic-bezier(.15,.7,.12,1);filter:drop-shadow(0 10px 20px #0004)}.wheel-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:3px solid #f6dfa6;border-radius:50%;background:#24151c;color:#f6dfa6;width:55px;height:55px;font-size:23px;display:grid;place-items:center;pointer-events:none}.album-tools{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px 0}.album-tools input{max-width:100%;color:inherit}.album-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}.album-photo{position:relative;min-height:150px;border-radius:15px;overflow:hidden;border:1px solid #d8b66d66;background:#211812}.album-photo img{width:100%;height:190px;object-fit:cover;display:block}.album-photo .photo-caption{padding:10px;color:var(--gold2);font-size:13px;overflow-wrap:anywhere}.album-photo button{margin:0 10px 10px;border:0;border-radius:20px;padding:5px 10px;cursor:pointer;background:#7b4358;color:white}.album-empty{padding:24px;border:1px dashed #d8b66d66;border-radius:15px;color:#bfb3b0;line-height:2}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
 </style>
 </head>
 
 <body>
+<div class="toolbar"><button type="button" id="themeToggle" aria-label="تبديل الوضع">☀️ / 🌙 الوضع</button></div>
+<div class="welcome-screen" id="welcomeScreen" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+  <div class="welcome-card"><div class="big-heart">💗</div><div class="label">A LITTLE SURPRISE FOR YOU</div><h2 id="welcomeTitle">أهلًا يا فطوم</h2><p>يا أجمل حكاية بحياة عبود…<br>حضّرتلك زاوية صغيرة مليانة حب وذكريات ومفاجآت، وكل تفصيل فيها إلك ❤️</p><button class="gold-btn" id="startWelcome" type="button">افتحي حكايتنا ✨</button></div>
+</div>
 
 <div id="stars"></div>
 
@@ -455,11 +555,11 @@ footer span { color: var(--gold); }
 
   <div class="gold-line"></div>
 
-  <div class="sub">مش مجرد حكاية حب...</div>
+  <div class="sub">مش بس حكاية حب...</div>
 
   <p>
-    هاي حكاية بنت صارت جزء من أيامي،<br>
-    وشب اسمه عبود لسه كل يوم بحمد ربّه عليها.
+    هاي حكاية بنت دخلت أيامي وصارت أحلى تفاصيلها،<br>
+    وشب اسمه عبود كل يوم بحمد ربنا إنها بحياته.
   </p>
 
   <button class="gold-btn"
@@ -476,7 +576,7 @@ footer span { color: var(--gold); }
 
   <div class="label reveal">CHAPTER ONE</div>
 
-  <h2 class="heading reveal">من هون بلشت الحكاية...</h2>
+  <h2 class="heading reveal">من هون بلّشت حكايتنا...</h2>
 
   <p class="description reveal">
     فطوم، يمكن ما بتعرفي قديش في تفاصيل صغيرة
@@ -491,16 +591,16 @@ footer span { color: var(--gold); }
     <h3>أول مشوار إلك...</h3>
 
     <p>
-      بتذكري أول يوم وصلتك فيه على مدرستك بالتوجيهي؟
+      بتتذكري أول يوم وصلتك فيه عالمدرسة بالتوجيهي؟
       <br><br>
-      يمكن بالنسبة لغيرنا كان مجرد مشوار عادي...
-      بس بالنسبة إلي، هداك اليوم إله مكانة خاصة بقلبي.
+      يمكن عند غيرنا كان مشوار عادي...
+      بس عندي هداك اليوم إله مكانة كبيرة بقلبي.
       <br><br>
-      أول ما شفتك، ما كنت بعرف قديش رح تصيري غالية عليّ،
-      ولا قديش رح تصير هالذكرى من أحب الذكريات عندي.
+      أول ما شفتك ما كنت عارف قديش رح تغلي عليّ،
+      ولا قديش رح تصير هالذكرى من أغلى ذكرياتي.
       <br><br>
-      ومن يومها، في أشياء صغيرة بتضل تكبر بقلبي...
-      وإنتِ واحدة من أجملها.
+      ومن يومها، في شغلات صغيرة ضلّت تكبر بقلبي...
+      وإنتِ أحلاها.
     </p>
 
   </div>
@@ -512,8 +612,8 @@ footer span { color: var(--gold); }
   <div class="memory reveal">
     <h3>ضحكتك</h3>
     <p>
-      في ضحكات بنسمعها وبننساها،
-      وفي ضحكة بتضل ترن ببالنا...
+      في ضحكات بنسمعها وبننسى صوتها،
+      وفي ضحكة بتضل ترن براسنا...
       وإنتِ بتعرفي أي ضحكة بحكي عنها.
     </p>
   </div>
@@ -522,7 +622,7 @@ footer span { color: var(--gold); }
     <h3>دلعك</h3>
     <p>
       حتى لما تتدلعي وتعملي حالك زعلانة،
-      بضل قلبي بده يراضيكي...
+      بضلّي بدي أراضيكي...
       بس لا تستغلي الموضوع كثير 😂
     </p>
   </div>
@@ -530,30 +630,30 @@ footer span { color: var(--gold); }
   <div class="memory reveal">
     <h3>وجودك</h3>
     <p>
-      مش ضروري يكون في مناسبة،
-      ولا لازم يصير إشي كبير...
-      وجودك لحاله بفرق معي.
+      مش لازم يكون في مناسبة،
+      ولا يصير إشي كبير...
+      وجودك لحاله بيفرق معي.
     </p>
   </div>
 
   <div class="label reveal">CHAPTER THREE</div>
 
-  <h2 class="heading reveal">رسالة من عبود</h2>
+  <h2 class="heading reveal">كلمتين من عبود</h2>
 
   <div class="card reveal">
-    <h3>إلى فطوم...</h3>
+    <h3>لفطوم حبيبتي...</h3>
     <p>
-      بدي تعرفي إنك مش شخص عابر بحياتي،
-      إنتِ إنسانة بحب تفاصيلها وبقدّر وجودها.
+      بدي إياكي تعرفي إنك مش أي حدا بحياتي،
+      إنتِ وحدة بحب تفاصيلها وبحمد ربنا على وجودها.
       <br><br>
-      بعرف إنه مش كل الأيام رح تكون وردية،
-      وممكن نختلف أو نزعل،
-      بس اللي بتمناه نضل نعرف كيف نرجع نضحك مع بعض.
+      عارف إنه مش كل الأيام رح تكون حلوة،
+      وممكن نختلف ونزعل،
+      بس نفسي نعرف دايمًا كيف نرجع نضحك سوا.
       <br><br>
-      ما بدي أكون بس شخص بحياتك،
-      بدي أكون الشخص اللي ترتاحي معه،
-      وتكوني على طبيعتك معه،
-      وتلاقي عنده قلب يحبك ويحترمك.
+      مش بدي أكون بس حدا بحياتك،
+      بدي أكون الحدا اللي ترتاحي معه،
+      وتكوني معه على طبيعتك،
+      وتلاقي عنده قلب بحبك وبحترمك.
       <br><br>
       بحبك يا فطوم،
       واليوم وبكرا وكل يوم...
@@ -571,8 +671,8 @@ footer span { color: var(--gold); }
     <p>اضغطي هون واكتشفي شو مخبيلك عبود</p>
 
     <div id="secretMessage">
-      لو تعرفي قديش مرات ببتسم لحالي
-      لما أتذكر موقف إلنا...
+      لو تعرفي قديش مرات بضحك لحالي
+      بس أتذكر موقف صار بينا...
       كان زمانك عرفتي إنك ساكنة بقلبي
       أكثر مما بتتخيلي.
       <br><br>
@@ -584,12 +684,175 @@ footer span { color: var(--gold); }
   <!-- عداد الأيام -->
   <div class="counter-box reveal">
 
-    <h3>كل يوم وإنتِ بقلبي</h3>
+    <h3>كل يوم وإنتِ بقلبي يا فطوم</h3>
 
     <div class="counter" id="days">♡</div>
 
     <p>يوم من بداية حكايتنا الجميلة</p>
 
+  </div>
+
+
+  <!-- العد التنازلي للخطبة -->
+  <div class="counter-box reveal">
+    <h3>بلّش العدّ لأحلى يوم... 💍</h3>
+    <p>موعد خطبتنا بإذن الله — 27 / 7 / 2027</p>
+    <div class="engagement-countdown" aria-live="polite">
+      <div class="time-unit"><strong id="engDays">--</strong><span>يوم</span></div>
+      <div class="time-unit"><strong id="engHours">--</strong><span>ساعة</span></div>
+      <div class="time-unit"><strong id="engMinutes">--</strong><span>دقيقة</span></div>
+      <div class="time-unit"><strong id="engSeconds">--</strong><span>ثانية</span></div>
+    </div>
+    <p id="engMessage" style="margin-top:18px;color:var(--gold2)">كل يوم بقرّبنا أكتر من يومنا الحلو ❤️</p>
+  </div>
+
+
+  <!-- عالم فطوم وعبود -->
+  <div class="content reveal" style="padding-top:35px;padding-bottom:35px">
+    <div class="label">A LITTLE WORLD FOR YOU</div>
+    <h2 class="heading">عالم فطوم وعبود ✨</h2>
+    <p class="description">كل زاوية هون مخبّاية فيها كلمة حب أو ذكرى أو ضحكة... لفي واكتشفي يا فطوم ❤️</p>
+
+    <div class="feature-grid">
+      <div class="feature-card" onclick="showDailyMessage()">
+        <div class="emoji">💌</div>
+        <h3>رسالة اليوم</h3>
+        <p>كلمتين من عبود، يمكن يخلّوا يومك أحلى.</p>
+        <button class="feature-action" type="button">افتحي رسالتك</button>
+      </div>
+      <div class="feature-card" onclick="openGift()">
+        <div class="emoji">🎁</div>
+        <h3>صندوق المفاجآت</h3>
+        <p>اكبسي وشوفي شو مخبّي إلك عبود اليوم.</p>
+        <button class="feature-action" type="button">افتحي الصندوق</button>
+      </div>
+      <div class="feature-card" onclick="showFutureLetter()">
+        <div class="emoji">💍</div>
+        <h3>رسالة للمستقبل</h3>
+        <p>كلمات من عبود إلك، لليوم اللي بنحلم فيه سوا.</p>
+        <button class="feature-action" type="button">اقرئي الرسالة</button>
+      </div>
+      <div class="feature-card" onclick="showDreams()">
+        <div class="emoji">🌙</div>
+        <h3>أحلامنا سوا</h3>
+        <p>شغلات حلوة نفسنا نعيشها ونحققها سوا.</p>
+        <button class="feature-action" type="button">شوفي أحلامنا</button>
+      </div>
+      <div class="feature-card" onclick="showPromise()">
+        <div class="emoji">🤝</div>
+        <h3>وعد من عبود</h3>
+        <p>كل كبسة إلها وعد جديد إلك.</p>
+        <button class="feature-action" type="button">اسمعي الوعد</button>
+      </div>
+      <div class="feature-card" onclick="showCompliment()">
+        <div class="emoji">🌷</div>
+        <h3>كلمة حلوة</h3>
+        <p>افتحي وخدي جرعة دلال جديدة.</p>
+        <button class="feature-action" type="button">دلّعني يا عبود</button>
+      </div>
+      <div class="feature-card" onclick="showQuestion()">
+        <div class="emoji">💞</div>
+        <h3>سؤال بيناتنا</h3>
+        <p>سؤال جديد يفتح حكي وضحك.</p>
+        <button class="feature-action" type="button">اسألي سؤال</button>
+      </div>
+      <div class="feature-card" onclick="sendMissYou()">
+        <div class="emoji">🥺</div>
+        <h3>زر اشتقتلك</h3>
+        <p>اكبسي وخلي عبود يبعثلك كلمة شوق.</p>
+        <button class="feature-action" type="button">اشتقتلك</button>
+      </div>
+    </div>
+
+    <div id="featureOutput" class="feature-output" aria-live="polite"></div>
+
+    <div class="card reveal" style="margin-top:35px">
+      <div class="label">HOW WELL DO YOU KNOW US?</div>
+      <h3>قديش بتعرفي عبود؟ 😍</h3>
+      <p>سؤال من حكايتنا... جاوبي وورجيني شطارتك.</p>
+      <div class="love-quiz">
+        <p id="quizQuestion" style="color:var(--gold2)">شو اسم البنت اللي عبود عامل إلها هالموقع كله؟</p>
+        <button class="quiz-option" onclick="answerQuiz(false)">سارة</button>
+        <button class="quiz-option" onclick="answerQuiz(true)">فطوم ❤️</button>
+        <button class="quiz-option" onclick="answerQuiz(false)">ريم</button>
+      </div>
+      <p id="quizFeedback" class="quiz-feedback" aria-live="polite"></p>
+    </div>
+
+    <div class="card reveal">
+      <div class="emoji" style="font-size:35px">👑</div>
+      <h3>مملكة فطوم</h3>
+      <p>الملكة: فطوم 👑<br>حارس المملكة: عبود 😂<br>قانون المملكة الأول: راحة فطوم وفرحتها إلهم مكان كبير بقلب عبود، والاتفاق دايمًا بين الطرفين ❤️</p>
+    </div>
+  </div>
+
+  <!-- إضافات تفاعلية جديدة -->
+  <div class="content new-feature-section reveal" id="loveExtras">
+    <div class="label">LITTLE SURPRISES</div><h2 class="heading">مفاجآت مخصوص لفطوم 💌</h2>
+    <p class="description">رسالة بظرف، وخدشة صغيرة، ولفّة حظ، وألبوم لذكرياتنا الجاية.</p>
+    <div class="card">
+      <h3>ظرف من عبود لفطوم 💌</h3><p>اكبسي على الظرف وافتحي الرسالة اللي مخبّيها إلك.</p>
+      <div class="envelope-wrap"><button class="envelope" id="loveEnvelope" type="button" aria-label="افتحي ظرف الرسالة"><span class="env-body"></span><span class="letter-paper">يا فطوم، لو بقدر أخبّي كل لحظة حلوة بينا بمكان آمن، كنت خبّيتها بقلبي… لأنك أجمل تفصيل بحياتي. بحبك ❤️</span><span class="env-flap"></span><span class="env-heart">♥</span></button></div>
+      <p id="envelopeHint" class="description">اضغطي على الظرف ليفتح ✨</p>
+    </div>
+    <div class="card"><h3>اكشطي واكتشفي 💖</h3><p>حرّكي إصبعك أو الماوس فوق البطاقة واكتشفي المفاجأة.</p>
+      <div class="scratch-area" id="scratchArea"><div class="scratch-reveal">مفاجأتك يا فطوم 💗<br>ضحكتك هي هديتي المفضّلة!</div><canvas id="scratchCanvas" aria-label="اكشطي البطاقة لاكتشاف الرسالة"></canvas></div>
+      <button class="feature-action" id="resetScratch" type="button">جرّبي مرة ثانية</button>
+    </div>
+    <div class="card"><h3>عجلة الحظ الرومانسية 🎡</h3><p>لفّي العجلة وخليها تختارلكم فكرة حلوة تعملوها سوا.</p>
+      <div class="wheel-shell"><div class="wheel-pointer"></div><canvas id="loveWheel" width="500" height="500" aria-label="عجلة الحظ"></canvas><div class="wheel-center">♥</div></div>
+      <button class="gold-btn" id="spinWheel" type="button">لفّي العجلة ✨</button><div id="wheelResult" class="feature-output" aria-live="polite"></div>
+    </div>
+    <div class="card"><h3>ألبوم ذكرياتنا 📸</h3><p>اختاري صوركم من جهازك لتظهر في ألبوم محلي على هالصفحة. الصور لا تُرفع لأي مكان.</p>
+      <div class="album-tools"><input id="albumUpload" type="file" accept="image/*" multiple aria-label="اختاري صور الألبوم"><button class="feature-action" id="clearAlbum" type="button">مسح صور الجلسة</button></div>
+      <div class="album-grid" id="albumGrid"><div class="album-empty">لسّه الألبوم فاضي… أول صورة حلوة بينكم بتستاهل مكان هون ❤️</div></div>
+    </div>
+  </div>
+
+  <!-- اتفاق فطوم وعبود -->
+  <div class="content reveal" style="padding-top:35px;padding-bottom:35px">
+    <div class="label">OUR LITTLE PROMISES</div>
+    <h2 class="heading">قوانين فطوم وعبود ❤️</h2>
+    <p class="description">هاي 36 شغلة متفقين عليها أنا وإنتِ يا فطوم، من تفاصيل الحب اللي بنعيشها كل يوم. أهم إشي نكون متفاهمين ومرتاحين، وكل إشي بينا يكون بالرضا والمحبة ❤️</p>
+    <div class="rules-list">
+      <div class="rule-item"><span class="rule-number">01</span><span>إذا واحد فينا طلع مشوار، يطمن الثاني إنه وصل بالسلامة، وما يختفي فجأة.</span></div>
+      <div class="rule-item"><span class="rule-number">02</span><span>مشاوير باسم؟ نتفق عليها ونراعي مشاعر بعض، والثقة والاحترام أساس علاقتنا.</span></div>
+      <div class="rule-item"><span class="rule-number">03</span><span>الأكل من إيد فطوم إله طعم ثاني، وعبود ممنوع ينتقد الطبخة قبل ما يذوق 😂❤️</span></div>
+      <div class="rule-item"><span class="rule-number">04</span><span>ممنوع ننام وإحنا زعلانين من بعض من غير ما نحاول نحل الموضوع، وإذا احتجنا نهدأ بنرجع نحكي.</span></div>
+      <div class="rule-item"><span class="rule-number">05</span><span>الاحترام واجب حتى وقت العصبية؛ لا تجريح ولا إهانة ولا حكي يوجع.</span></div>
+      <div class="rule-item"><span class="rule-number">06</span><span>ممنوع الكذب، حتى لو الحقيقة محرجة؛ الصراحة أريح من ألف تبرير.</span></div>
+      <div class="rule-item"><span class="rule-number">07</span><span>إذا فطوم حكت لعبود إنها زعلانة، يسمعها للآخر وما يحول الموضوع لمسابقة مين معه حق.</span></div>
+      <div class="rule-item"><span class="rule-number">08</span><span>إذا عبود حكى إنه مضغوط، فطوم تسمعه وتسانده، مش تزيد عليه.</span></div>
+      <div class="rule-item"><span class="rule-number">09</span><span>صباح الخير ومساء الخير إلهم مكانهم، والرسالة الحلوة بتفرق حتى لو كانت قصيرة.</span></div>
+      <div class="rule-item"><span class="rule-number">10</span><span>ممنوع التجاهل المتعمد والعقاب بالصمت؛ إذا في زعل نحكي ونوضح.</span></div>
+      <div class="rule-item"><span class="rule-number">11</span><span>الغيرة حلوة بحدود، بس ممنوع الشك والتفتيش والتحكم.</span></div>
+      <div class="rule-item"><span class="rule-number">12</span><span>كل واحد يحترم أهل الثاني، وما يسمح لحدا يقلل من شريكه.</span></div>
+      <div class="rule-item"><span class="rule-number">13</span><span>أسرارنا ومشاكلنا إلنا، وما نطلع تفاصيل علاقتنا لكل الناس.</span></div>
+      <div class="rule-item"><span class="rule-number">14</span><span>ممنوع نقارن علاقتنا بعلاقات غيرنا؛ إلنا حكايتنا وطريقتنا.</span></div>
+      <div class="rule-item"><span class="rule-number">15</span><span>إذا وعدنا بشغلة، نحاول نلتزم فيها، وإذا ما قدرنا نحكي من بدري.</span></div>
+      <div class="rule-item"><span class="rule-number">16</span><span>المناسبات والتواريخ الحلوة ما تننسى، وحتى اللفتة البسيطة إلها قيمة.</span></div>
+      <div class="rule-item"><span class="rule-number">17</span><span>فطوم إلها حق تتدلع، وعبود إله حق يتدلع كمان، والدلع متبادل 😂</span></div>
+      <div class="rule-item"><span class="rule-number">18</span><span>ممنوع نستخدم نقطة ضعف أو سر عرفناه عن بعض وقت الخلاف.</span></div>
+      <div class="rule-item"><span class="rule-number">19</span><span>وقت الدراسة أو الشغل بنشجع بعض، وما بنزعل من انشغال الطرف الثاني إذا وضّح.</span></div>
+      <div class="rule-item"><span class="rule-number">20</span><span>إذا واحد تأخر، يبعث خبر وما يترك الثاني قاعد يفكر ألف فكرة.</span></div>
+      <div class="rule-item"><span class="rule-number">21</span><span>الطلعات والزيارات تكون بتفاهم ووضوح، من غير فرض أو منع أو ضغط.</span></div>
+      <div class="rule-item"><span class="rule-number">22</span><span>ممنوع نحرج بعض قدام الناس، وأي ملاحظة بنحكيها بيننا وبأسلوب محترم.</span></div>
+      <div class="rule-item"><span class="rule-number">23</span><span>كل واحد يحافظ على خصوصية تلفون الثاني وحساباته؛ الثقة مش تفتيش.</span></div>
+      <div class="rule-item"><span class="rule-number">24</span><span>إذا صار سوء فهم، نسأل ونوضح قبل ما نحكم أو نكبر القصة.</span></div>
+      <div class="rule-item"><span class="rule-number">25</span><span>الاعتذار مش ضعف، واللي يغلط يبادر يصلح غلطه.</span></div>
+      <div class="rule-item"><span class="rule-number">26</span><span>المسامحة تكون من القلب، وما نرجع نفتح نفس الموضوع كل مرة.</span></div>
+      <div class="rule-item"><span class="rule-number">27</span><span>نخصص وقت لبعض، حتى لو مكالمة قصيرة أو سؤال عن اليوم.</span></div>
+      <div class="rule-item"><span class="rule-number">28</span><span>ممنوع نستهين بمشاعر بعض؛ اللي بوجع واحد فينا بناخده بجدية.</span></div>
+      <div class="rule-item"><span class="rule-number">29</span><span>نضحك ونمزح، بس ما نمزح بشي بعرف إنه بجرح الطرف الثاني.</span></div>
+      <div class="rule-item"><span class="rule-number">30</span><span>إذا فطوم طلبت صورة حلوة، عبود ما يبعث صورة وهو مغمض 😂📸</span></div>
+      <div class="rule-item"><span class="rule-number">31</span><span>إذا عبود حكى لفطوم بحبك، الرد الحلو مطلوب وما في داعي للتطنيش 😂❤️</span></div>
+      <div class="rule-item"><span class="rule-number">32</span><span>ممنوع نترك تدخلات الناس تخرب بيننا؛ بنسمع لبعض وبنقرر سوا.</span></div>
+      <div class="rule-item"><span class="rule-number">33</span><span>كل واحد يشجع الثاني على أحلامه ونجاحه، ويكون سند مش عائق.</span></div>
+      <div class="rule-item"><span class="rule-number">34</span><span>ما في عناد على حساب راحتنا؛ مرات كلمة حقك عليّ بتختصر يوم كامل.</span></div>
+      <div class="rule-item"><span class="rule-number">35</span><span>قانون باسم: باسم هاد الشخص ممنوع عبود يطلع معاه 😂❤️ والموضوع مزحة واتفاق بين فطوم وعبود.</span></div>
+      <div class="rule-item"><span class="rule-number">36</span><span>أهم قانون: نضل نختار بعض كل يوم، ونبني علاقتنا على المودة والرحمة والثقة.</span></div>
+    </div>
+    <p class="description" style="margin-top:25px;color:var(--gold2)">وأهم قانون: نضل نختار بعض كل يوم، ونبني بيتنا على المودة والرحمة. ❤️</p>
   </div>
 
 </section>
@@ -602,19 +865,19 @@ footer span { color: var(--gold); }
   <h2>فطوم...</h2>
 
   <p>
-    لو رجع فيني الزمن،
-    ورجعت لنفس أول مشوار وصلتك فيه على مدرستك،
+    لو الزمن رجع فيي،
+    ورجعت لأول مشوار وصلتك فيه عالمدرسة،
     بتعرفي شو رح أعمل؟
     <br><br>
-    رح أختار إني أعيش هالحكاية معك من جديد.
+    كنت رح أختار أعيش هالحكاية معك من أول وجديد.
     <br><br>
-    لأنك مش بس ذكرى حلوة...
-    إنتِ الحاضر اللي بحبه، والمستقبل اللي بتمنى نعيشه سوا.
+    لإنك مش بس ذكرى حلوة...
+    إنتِ حاضري اللي بحبه، وبكرا اللي نفسي نعيشه سوا.
   </p>
 
   <div class="gold-line"></div>
 
-  <h2>لسه بتختاريني يا فطوم؟</h2>
+  <h2>لساتك بتختاريني يا فطوم؟</h2>
 
   <div class="buttons">
 
@@ -643,7 +906,7 @@ footer span { color: var(--gold); }
 
     <div style="font-size:45px;color:#d8b66d">✦</div>
 
-    <h2 id="resultTitle">أحلى نهاية لفيلمنا!</h2>
+    <h2 id="resultTitle">أحلى نهاية لحكايتنا!</h2>
 
     <p id="resultText">
       هيك بدي إياكي دايمًا،
@@ -721,6 +984,30 @@ function updateCounter() {
 
 updateCounter();
 
+
+// العد التنازلي ليوم الخطبة: 27 يوليو 2027
+const engagementDate = new Date(2027, 6, 27, 0, 0, 0);
+
+function updateEngagementCountdown() {
+  const now = new Date();
+  const remaining = engagementDate - now;
+  if (remaining <= 0) {
+    document.getElementById('engDays').innerText = '0';
+    document.getElementById('engHours').innerText = '0';
+    document.getElementById('engMinutes').innerText = '0';
+    document.getElementById('engSeconds').innerText = '0';
+    document.getElementById('engMessage').innerText = 'وصل يومنا الحلو! رسالة المستقبل صارت إلك يا فطوم ❤️';
+    return;
+  }
+  const totalSeconds = Math.floor(remaining / 1000);
+  document.getElementById('engDays').innerText = Math.floor(totalSeconds / 86400);
+  document.getElementById('engHours').innerText = Math.floor((totalSeconds % 86400) / 3600);
+  document.getElementById('engMinutes').innerText = Math.floor((totalSeconds % 3600) / 60);
+  document.getElementById('engSeconds').innerText = totalSeconds % 60;
+}
+updateEngagementCountdown();
+setInterval(updateEngagementCountdown, 1000);
+
 // قلوب متطايرة
 function createHeart() {
   const heart = document.createElement('div');
@@ -744,10 +1031,10 @@ function createHeart() {
 function sayYes() {
 
   document.getElementById('resultTitle').innerText =
-    'أحلى نهاية لفيلمنا! ❤️';
+    'أحلى نهاية لحكايتنا! ❤️';
 
   document.getElementById('resultText').innerHTML =
-    'هيك بدي إياكي دايمًا، مبسوطة ومرتاحة وقريبة من قلبي.<br><br>بحبك يا فطوم.<br>عبود ❤️';
+    'هيك بدي أشوفك دايمًا، مبسوطة ومرتاحة وقريبة من قلبي.<br><br>بحبك يا فطوم.<br>عبود ❤️';
 
   document.getElementById('result').style.display='flex';
 
@@ -782,6 +1069,113 @@ thinkBtn.addEventListener('touchstart',function(e){
   escapeButton();
 },{passive:false});
 
+
+// مفاجآت وفعاليات عالم فطوم وعبود
+const messagePools = {
+  daily: [
+    "يا فطوم يا زينة هالدنيا، بس حبيت أحكيلك إنك على بالي حتى وأنا مشغول ❤️",
+    "لو يومك مش أحلى إشي، خليكي متأكدة إنه في حدا بتمنى يشوف ضحكتك وما يشوف الزعل بعيونك 🌷",
+    "يا روحي، وجودك لحاله بخلّي التفاصيل العادية إلها طعم ثاني 💗",
+    "تعرفي شو أحلى إشعار؟ إشعار منك، حتى لو بس كلمة كيفك 😂❤️",
+    "الله يديمك فرحة بقلبي، ويكتب إلنا أيام أحنّ وأحلى من اللي بنحلم فيها 🤍",
+    "يا فطوم، إنتِ مش بس حدا بحبه، إنتِ حكاية حلوة بتمنى تضل مكملة معي."
+  ],
+  gifts: [
+    "هدية اليوم: حضن طويل، وبعده ضحكة من القلب، وممنوع الزعل يطوّل 😂❤️",
+    "هدية اليوم: مشوار حلو سوا، حتى لو كان قعدة بسيطة وحكي للصبح 🌙",
+    "هدية اليوم: وعد إني أسمعك منيح وما أستهين بأي إشي بزعلك 🤍",
+    "هدية اليوم: يوم كامل كله دلال لفطوم، والملكة إلها تطلب اللي بدها إياه 👑",
+    "هدية اليوم: أغنية بتذكّرني فيكي، ورسالة حلوة قبل النوم 🎶",
+    "هدية اليوم: ذكرى جديدة نضيفها لحكايتنا، ونضل نضحك عليها بعد سنين."
+  ],
+  dreams: [
+    "نطلع مشوار عالبحر ونقعد نحكي لحد ما تغيب الشمس 🌅",
+    "نعمل ألبوم صور إلنا، وكل صورة وراها حكاية وضحكة 📸",
+    "نحتفل بيوم خطبتنا ونحمد ربنا إنه جمعنا على خير 💍",
+    "نحقق أحلام بعض، ونكون أول ناس بتصفّق لنجاح الثاني ❤️",
+    "نقعد بليلة شتا، نشرب إشي سخن ونحكي عن كل اللي نفسنا نعمله ☕",
+    "نبني أيام فيها مودة وستر وراحة بال، ونضل سند لبعض."
+  ],
+  promises: [
+    "بوعدك أحكي معك بصراحة، حتى لو الموضوع صعب.",
+    "بوعدك أسمعك للآخر، وما أقلّل من شعورك.",
+    "بوعدك نحل الزعل بالحكي والتفاهم، مش بالتطنيش.",
+    "بوعدك أفرح لفرحتك وأوقف جنبك بوقت تعبك.",
+    "بوعدك أضل أتعلم كيف أحبك بالطريقة اللي بتريح قلبك."
+  ],
+  compliments: [
+    "ضحكتك إلها قدرة غريبة تغيّر مزاج يوم كامل ❤️",
+    "فيكي حنية بتخلّي الواحد يحس إنه الدنيا لسه بخير.",
+    "يا فطوم، إنتِ حلوة بعفويتك وبكل تفاصيلك 🌷",
+    "حكيك حتى لو بسيط، إله مكان خاص عندي.",
+    "أحلى إشي فيكي إنك إنتِ، من غير ما تتصنّعي لأي حدا."
+  ],
+  questions: [
+    "لو طلعنا مشوار هس، بتختاري البحر ولا مكان هادي فيه قهوة؟",
+    "شو أكتر ذكرى بينا بتضحّكك كل ما تتذكريها؟",
+    "لو بدنا نختار أغنية تكون إلنا، شو بتختاري؟",
+    "شو أول أكلة نفسك ناكلها سوا بمشوارنا الجاي؟",
+    "لو معنا يوم كامل بدون أي التزامات، كيف بتحبي نقضيه؟"
+  ]
+};
+const lastPicked = {};
+function pickNew(poolName) {
+  const pool = messagePools[poolName];
+  let index = Math.floor(Math.random() * pool.length);
+  if (pool.length > 1 && index === lastPicked[poolName]) index = (index + 1 + Math.floor(Math.random() * (pool.length - 1))) % pool.length;
+  lastPicked[poolName] = index;
+  return pool[index];
+}
+function showFeatureOutput(message) {
+  const box = document.getElementById('featureOutput');
+  box.innerHTML = message;
+  box.style.display = 'block';
+  box.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+function showDailyMessage() {
+  showFeatureOutput('<div class="future-note">رسالة جديدة إلك يا فطوم 💌</div>' + pickNew('daily'));
+}
+function openGift() {
+  showFeatureOutput('<div class="future-note">🎁 مفاجأة جديدة إلك</div>' + pickNew('gifts'));
+  for(let i=0;i<10;i++) setTimeout(createHeart, i*120);
+}
+function showFutureLetter() {
+  const now = new Date();
+  if (now < engagementDate) {
+    const daysLeft = Math.ceil((engagementDate - now) / 86400000);
+    showFeatureOutput('<div class="future-note">لسّه الرسالة إلها موعدها 💍</div>يا فطوم، هاي رسالة يوم خطبتنا، ومش رح تنفتح قبل ما يخلص العدّاد وييجي يومنا الحلو. ضايل إلنا ' + daysLeft + ' يوم تقريبًا... اصبري شوي، الحلو جاي ❤️');
+    return;
+  }
+  showFeatureOutput('<div class="future-note">إلى فطوم... بيوم خطبتنا 💍</div>يا فطوم، وصل اليوم اللي استنيناه، واليوم بدي أحكيلك قديش أنا مبسوط إننا وصلنا لهون. أحلى إشي مش الصور ولا التاريخ، أحلى إشي إنك جنبي وإننا اخترنا نكمّل سوا بالمحبة والاحترام. الله يتمملنا على خير ويجعل أيامنا الجاية كلها فرح وستر وراحة بال. بحبك يا فطوم ❤️');
+}
+function showDreams() {
+  showFeatureOutput('<div class="future-note">حلم جديد من أحلامنا 🌙</div>' + pickNew('dreams'));
+}
+function showPromise() {
+  showFeatureOutput('<div class="future-note">وعد من عبود إلك 🤝</div>' + pickNew('promises'));
+}
+function showCompliment() {
+  showFeatureOutput('<div class="future-note">إشي حلو لازم تعرفيه 🌷</div>' + pickNew('compliments'));
+}
+function showQuestion() {
+  showFeatureOutput('<div class="future-note">سؤال إلنا إحنا الاثنين 💞</div>' + pickNew('questions'));
+}
+function sendMissYou() {
+  const notes = [
+    "اشتقتلك يا فطوم، حتى لو لسه حاكين من شوي ❤️",
+    "في ناس بنشتاقلها من قبل ما تروح، وإنتِ منهم.",
+    "بس حبيت أمرّ وأحكيلك إنك وحشتيني يا أحلى فطوم.",
+    "لو بإيدي، كان هس بسمع ضحكتك قدامي بدل ما أكتبلك."
+  ];
+  const pool = messagePools.missYou || (messagePools.missYou = notes);
+  showFeatureOutput('<div class="future-note">وصلتك رسالة شوق 💗</div>' + pickNew('missYou'));
+}
+function answerQuiz(correct) {
+  document.getElementById('quizFeedback').innerText = correct
+    ? 'شطورة يا فطوم! أكيد إنتِ بطلة الحكاية كلها ❤️'
+    : 'قريبة، بس جرّبي مرة ثانية... بطلة الموقع هي فطوم 😄';
+}
+
 // إغلاق النافذة
 function closeResult() {
   document.getElementById('result').style.display='none';
@@ -789,6 +1183,34 @@ function closeResult() {
 
 // مؤثرات بسيطة
 setInterval(createHeart,3000);
+
+
+
+// الإضافات الجديدة — مستقلة عن الوظائف الأصلية
+(function initRomanticExtras(){
+ const welcome=document.getElementById('welcomeScreen');
+ const start=document.getElementById('startWelcome');
+ if(start&&welcome) start.addEventListener('click',()=>{welcome.classList.add('dismissed');try{sessionStorage.setItem('fatoumWelcomeSeen','1')}catch(e){}});
+ try{if(sessionStorage.getItem('fatoumWelcomeSeen')==='1')welcome.classList.add('dismissed')}catch(e){}
+ const themeBtn=document.getElementById('themeToggle');
+ try{if(localStorage.getItem('fatoumTheme')==='day')document.body.classList.add('day-mode')}catch(e){}
+ function updateThemeLabel(){if(themeBtn)themeBtn.textContent=document.body.classList.contains('day-mode')?'🌙 الوضع الليلي':'☀️ الوضع النهاري'}
+ updateThemeLabel(); if(themeBtn)themeBtn.addEventListener('click',()=>{document.body.classList.toggle('day-mode');try{localStorage.setItem('fatoumTheme',document.body.classList.contains('day-mode')?'day':'night')}catch(e){}updateThemeLabel()});
+ const envelope=document.getElementById('loveEnvelope'); if(envelope)envelope.addEventListener('click',()=>{envelope.classList.toggle('opened');document.getElementById('envelopeHint').textContent=envelope.classList.contains('opened')?'كل كلمة إلك طالعة من القلب يا فطوم ❤️':'اضغطي على الظرف ليفتح ✨'});
+ // بطاقة الخدش
+ const scratch=document.getElementById('scratchCanvas'), area=document.getElementById('scratchArea'); let scratching=false, scratchCtx;
+ function paintScratch(){if(!scratch||!area)return;const r=area.getBoundingClientRect();const dpr=Math.max(1,window.devicePixelRatio||1);scratch.width=Math.max(1,Math.round(r.width*dpr));scratch.height=Math.max(1,Math.round(r.height*dpr));scratch.style.width=r.width+'px';scratch.style.height=r.height+'px';scratchCtx=scratch.getContext('2d');scratchCtx.setTransform(dpr,0,0,dpr,0,0);scratchCtx.globalCompositeOperation='source-over';const g=scratchCtx.createLinearGradient(0,0,r.width,r.height);g.addColorStop(0,'#d8b66d');g.addColorStop(.5,'#f6dfa6');g.addColorStop(1,'#b96f89');scratchCtx.fillStyle=g;scratchCtx.fillRect(0,0,r.width,r.height);scratchCtx.fillStyle='#573044';scratchCtx.font='bold 20px Cairo';scratchCtx.textAlign='center';scratchCtx.fillText('اكشطي هون ✨',r.width/2,r.height/2+7);scratchCtx.globalCompositeOperation='destination-out'}
+ function rub(e){if(!scratching||!scratchCtx)return;const r=scratch.getBoundingClientRect();const pt=e.touches?e.touches[0]:e;scratchCtx.beginPath();scratchCtx.arc(pt.clientX-r.left,pt.clientY-r.top,19,0,Math.PI*2);scratchCtx.fill()}
+ if(scratch){paintScratch();scratch.addEventListener('pointerdown',e=>{scratching=true;scratch.setPointerCapture?.(e.pointerId);rub(e)});scratch.addEventListener('pointermove',rub);scratch.addEventListener('pointerup',()=>scratching=false);scratch.addEventListener('pointercancel',()=>scratching=false);document.getElementById('resetScratch').addEventListener('click',paintScratch);window.addEventListener('resize',paintScratch)}
+ // عجلة الحظ
+ const wheel=document.getElementById('loveWheel'), spin=document.getElementById('spinWheel'); const ideas=['مشوار حلو سوا 🌅','رسالة حب من القلب 💌','قعدة وحكي بدون تلفونات ☕','صورة جديدة للألبوم 📸','حلوى ودلال لفطوم 🍰','نسترجع أحلى ذكرى 💗','فيلم وسهرة هادية 🎬','وعد حلو للمستقبل 💍'];let wheelRotation=0,spinning=false;
+ function drawWheel(){if(!wheel)return;const c=wheel.getContext('2d'),cx=250,cy=250,r=235;c.clearRect(0,0,500,500);ideas.forEach((idea,i)=>{const a=-Math.PI/2+i*Math.PI*2/ideas.length,b=a+Math.PI*2/ideas.length;c.beginPath();c.moveTo(cx,cy);c.arc(cx,cy,r,a,b);c.closePath();c.fillStyle=i%2?'#8f455e':'#d8b66d';c.fill();c.strokeStyle='#fff0d288';c.lineWidth=3;c.stroke();c.save();c.translate(cx,cy);c.rotate(a+Math.PI/ideas.length);c.textAlign='right';c.fillStyle=i%2?'#fff5ec':'#2a1720';c.font='bold 17px Cairo';c.fillText(idea.replace(/\s[\u{1F300}-\u{1FAFF}]+/gu,''),r-17,6,145);c.restore()});c.beginPath();c.arc(cx,cy,r,0,Math.PI*2);c.strokeStyle='#f6dfa6';c.lineWidth=7;c.stroke()}
+ drawWheel();if(spin)spin.addEventListener('click',()=>{if(spinning)return;spinning=true;spin.disabled=true;const idx=Math.floor(Math.random()*ideas.length);const segment=360/ideas.length;const target=360*5+(360-(idx*segment+segment/2));wheelRotation+=target;wheel.style.transform='rotate('+wheelRotation+'deg)';setTimeout(()=>{document.getElementById('wheelResult').style.display='block';document.getElementById('wheelResult').textContent='اختارتلكم العجلة: '+ideas[idx]+' ❤️';spinning=false;spin.disabled=false;for(let i=0;i<8;i++)setTimeout(createHeart,i*100)},4100)});
+ // ألبوم صور مؤقت للجلسة فقط
+ const upload=document.getElementById('albumUpload'),grid=document.getElementById('albumGrid');let photoUrls=[];
+ if(upload)upload.addEventListener('change',()=>{const files=Array.from(upload.files||[]).filter(f=>f.type.startsWith('image/'));if(!files.length)return;if(grid.querySelector('.album-empty'))grid.innerHTML='';files.forEach(file=>{const url=URL.createObjectURL(file);photoUrls.push(url);const card=document.createElement('div');card.className='album-photo';const img=document.createElement('img');img.src=url;img.alt='ذكرى من ألبوم فطوم وعبود';const caption=document.createElement('div');caption.className='photo-caption';caption.textContent=file.name;const remove=document.createElement('button');remove.type='button';remove.textContent='إزالة الصورة';remove.addEventListener('click',()=>{URL.revokeObjectURL(url);photoUrls=photoUrls.filter(u=>u!==url);card.remove();if(!grid.children.length)grid.innerHTML='<div class="album-empty">لسّه الألبوم فاضي… أول صورة حلوة بينكم بتستاهل مكان هون ❤️</div>'});card.append(img,caption,remove);grid.appendChild(card)});upload.value=''});
+ const clear=document.getElementById('clearAlbum');if(clear)clear.addEventListener('click',()=>{photoUrls.forEach(URL.revokeObjectURL);photoUrls=[];grid.innerHTML='<div class="album-empty">لسّه الألبوم فاضي… أول صورة حلوة بينكم بتستاهل مكان هون ❤️</div>'});
+})();
 
 </script>
 
