@@ -1,0 +1,796 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فطوم | حكاية عبود ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold: #d8b66d;
+  --gold2: #f6dfa6;
+  --black: #080808;
+  --pink: #d99aaf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: #fff;
+  font-family: 'Cairo', sans-serif;
+  overflow-x: hidden;
+}
+
+button { font-family: inherit; }
+
+#stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background: var(--gold2);
+  border-radius: 50%;
+  animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .1; transform: scale(.6); }
+  to { opacity: .9; transform: scale(1.5); }
+}
+
+section {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 25px;
+  background:
+    radial-gradient(ellipse at center, #38251a 0%, #17100e 40%, #080808 80%);
+}
+
+.top-label {
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: var(--gold);
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-family: 'Aref Ruqaa Ink', serif;
+  font-size: clamp(75px, 15vw, 135px);
+  color: var(--gold2);
+  text-shadow: 0 0 40px #d8b66d55;
+  animation: appear 2s ease;
+}
+
+.hero .sub {
+  font-family: 'Aref Ruqaa Ink', serif;
+  font-size: clamp(23px, 5vw, 34px);
+  color: #e5d4c5;
+  margin-top: 15px;
+}
+
+.hero p {
+  color: #bcb0a7;
+  margin-top: 20px;
+  line-height: 2.3;
+  font-size: 15px;
+}
+
+.gold-line {
+  width: 100px;
+  height: 1px;
+  background: var(--gold);
+  margin: 25px auto;
+  box-shadow: 0 0 15px var(--gold);
+}
+
+.gold-btn {
+  border: 1px solid var(--gold);
+  background: linear-gradient(120deg, #f0d69b, #b58a40);
+  color: #15100a;
+  border-radius: 50px;
+  padding: 15px 35px;
+  font-weight: 800;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: .4s;
+  box-shadow: 0 0 30px #d8b66d33;
+}
+
+.gold-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 40px #d8b66d88;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 25px;
+  font-size: 12px;
+  color: #998b7c;
+  animation: float 2s infinite;
+}
+
+@keyframes float {
+  50% { transform: translateY(10px); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.content {
+  max-width: 850px;
+  margin: auto;
+  padding: 100px 22px;
+  text-align: center;
+}
+
+.label {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.heading {
+  font-family: 'Aref Ruqaa Ink', serif;
+  color: var(--gold2);
+  font-size: clamp(35px, 7vw, 52px);
+  margin-bottom: 20px;
+}
+
+.description {
+  color: #bfb3b0;
+  line-height: 2.4;
+  font-size: 15px;
+}
+
+.card {
+  background: linear-gradient(145deg, #1b1714, #0c0b0a);
+  border: 1px solid #b18c4c55;
+  border-radius: 22px;
+  padding: 35px 25px;
+  margin: 30px 0;
+  box-shadow: 0 15px 50px #0008;
+  transition: .4s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+}
+
+.card h3 {
+  color: var(--gold);
+  font-family: 'Aref Ruqaa Ink', serif;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #cfc2ba;
+  line-height: 2.5;
+  font-size: 15px;
+}
+
+.number {
+  font-family: 'Aref Ruqaa Ink', serif;
+  font-size: 55px;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.memory {
+  position: relative;
+  border-right: 2px solid var(--gold);
+  margin: 45px 10px;
+  padding: 5px 25px 25px;
+  text-align: right;
+}
+
+.memory::before {
+  content: '';
+  position: absolute;
+  right: -7px;
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--gold);
+}
+
+.memory h3 {
+  color: var(--gold);
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.memory p {
+  color: #c7b9b3;
+  line-height: 2.4;
+}
+
+.secret {
+  background: linear-gradient(145deg, #241a15, #100d0b);
+  border: 1px solid #d8b66d66;
+  border-radius: 20px;
+  padding: 35px 20px;
+  margin: 35px 0;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.secret:hover {
+  box-shadow: 0 0 35px #d8b66d33;
+}
+
+.secret h3 {
+  color: var(--gold2);
+  font-family: 'Aref Ruqaa Ink', serif;
+  font-size: 30px;
+}
+
+.secret p {
+  color: #c9bdb4;
+  margin-top: 12px;
+  line-height: 2;
+}
+
+#secretMessage {
+  display: none;
+  color: #f0d9a4;
+  margin-top: 25px;
+  line-height: 2.5;
+  animation: appear 1s ease;
+}
+
+.counter-box {
+  border: 1px solid #d8b66d55;
+  border-radius: 20px;
+  padding: 30px 15px;
+  background: #17120f;
+  margin: 35px 0;
+}
+
+.counter-box h3 {
+  color: var(--gold);
+  font-family: 'Aref Ruqaa Ink', serif;
+  font-size: 30px;
+}
+
+.counter {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--gold2);
+  margin: 10px;
+}
+
+.counter-box p {
+  color: #aaa09b;
+  font-size: 13px;
+}
+
+.final {
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+  background: radial-gradient(circle, #39251c, #080808 70%);
+}
+
+.final h2 {
+  font-family: 'Aref Ruqaa Ink', serif;
+  color: var(--gold2);
+  font-size: clamp(38px, 8vw, 65px);
+  line-height: 1.8;
+  margin: 25px 0;
+}
+
+.final p {
+  color: #cfc0ba;
+  max-width: 580px;
+  line-height: 2.5;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 35px;
+  min-height: 80px;
+}
+
+.yes, .think {
+  padding: 14px 28px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: .25s;
+}
+
+.yes {
+  background: linear-gradient(120deg, #f0d69b, #b58a40);
+  border: none;
+  color: #17100a;
+}
+
+.think {
+  background: #25201c;
+  border: 1px solid #8a7658;
+  color: white;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  padding: 35px 15px;
+  text-align: center;
+  color: #8e8179;
+  font-size: 13px;
+}
+
+footer span { color: var(--gold); }
+
+#result {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: #050505f5;
+  padding: 20px;
+}
+
+.result-card {
+  width: 100%;
+  max-width: 470px;
+  text-align: center;
+  padding: 40px 25px;
+  border: 1px solid var(--gold);
+  border-radius: 25px;
+  background: linear-gradient(145deg, #302117, #100d0b);
+  animation: appear .6s ease;
+}
+
+.result-card h2 {
+  font-family: 'Aref Ruqaa Ink', serif;
+  color: var(--gold2);
+  font-size: 38px;
+  margin: 20px;
+}
+
+.result-card p {
+  color: #eadbd0;
+  line-height: 2.5;
+}
+
+.close {
+  margin-top: 25px;
+  background: var(--gold);
+  border: none;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.floating {
+  position: fixed;
+  z-index: 90;
+  bottom: -40px;
+  pointer-events: none;
+  animation: rise 5s linear forwards;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: 1s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media(max-width:500px) {
+  .content { padding: 75px 18px; }
+  .card { padding: 27px 18px; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<!-- البداية -->
+<section class="hero">
+
+  <div class="top-label">A STORY WRITTEN BY THE HEART</div>
+
+  <h1>فطوم</h1>
+
+  <div class="gold-line"></div>
+
+  <div class="sub">مش مجرد حكاية حب...</div>
+
+  <p>
+    هاي حكاية بنت صارت جزء من أيامي،<br>
+    وشب اسمه عبود لسه كل يوم بحمد ربّه عليها.
+  </p>
+
+  <button class="gold-btn"
+  onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">
+    ابدئي الفيلم
+  </button>
+
+  <div class="scroll-hint">كل مشهد إله حكاية ↓</div>
+
+</section>
+
+<!-- القصة -->
+<section class="content" id="story">
+
+  <div class="label reveal">CHAPTER ONE</div>
+
+  <h2 class="heading reveal">من هون بلشت الحكاية...</h2>
+
+  <p class="description reveal">
+    فطوم، يمكن ما بتعرفي قديش في تفاصيل صغيرة
+    بحياتنا بتضل عايشة بقلبي...
+    واليوم حبيت أرجع أعيش معك واحدة منها.
+  </p>
+
+  <div class="card reveal">
+
+    <div class="number">01</div>
+
+    <h3>أول مشوار إلك...</h3>
+
+    <p>
+      بتذكري أول يوم وصلتك فيه على مدرستك بالتوجيهي؟
+      <br><br>
+      يمكن بالنسبة لغيرنا كان مجرد مشوار عادي...
+      بس بالنسبة إلي، هداك اليوم إله مكانة خاصة بقلبي.
+      <br><br>
+      أول ما شفتك، ما كنت بعرف قديش رح تصيري غالية عليّ،
+      ولا قديش رح تصير هالذكرى من أحب الذكريات عندي.
+      <br><br>
+      ومن يومها، في أشياء صغيرة بتضل تكبر بقلبي...
+      وإنتِ واحدة من أجملها.
+    </p>
+
+  </div>
+
+  <div class="label reveal">CHAPTER TWO</div>
+
+  <h2 class="heading reveal">تفاصيلك بتعنيني</h2>
+
+  <div class="memory reveal">
+    <h3>ضحكتك</h3>
+    <p>
+      في ضحكات بنسمعها وبننساها،
+      وفي ضحكة بتضل ترن ببالنا...
+      وإنتِ بتعرفي أي ضحكة بحكي عنها.
+    </p>
+  </div>
+
+  <div class="memory reveal">
+    <h3>دلعك</h3>
+    <p>
+      حتى لما تتدلعي وتعملي حالك زعلانة،
+      بضل قلبي بده يراضيكي...
+      بس لا تستغلي الموضوع كثير 😂
+    </p>
+  </div>
+
+  <div class="memory reveal">
+    <h3>وجودك</h3>
+    <p>
+      مش ضروري يكون في مناسبة،
+      ولا لازم يصير إشي كبير...
+      وجودك لحاله بفرق معي.
+    </p>
+  </div>
+
+  <div class="label reveal">CHAPTER THREE</div>
+
+  <h2 class="heading reveal">رسالة من عبود</h2>
+
+  <div class="card reveal">
+    <h3>إلى فطوم...</h3>
+    <p>
+      بدي تعرفي إنك مش شخص عابر بحياتي،
+      إنتِ إنسانة بحب تفاصيلها وبقدّر وجودها.
+      <br><br>
+      بعرف إنه مش كل الأيام رح تكون وردية،
+      وممكن نختلف أو نزعل،
+      بس اللي بتمناه نضل نعرف كيف نرجع نضحك مع بعض.
+      <br><br>
+      ما بدي أكون بس شخص بحياتك،
+      بدي أكون الشخص اللي ترتاحي معه،
+      وتكوني على طبيعتك معه،
+      وتلاقي عنده قلب يحبك ويحترمك.
+      <br><br>
+      بحبك يا فطوم،
+      واليوم وبكرا وكل يوم...
+      لسه بختارك. ❤️
+    </p>
+  </div>
+
+  <!-- الرسالة السرية -->
+  <div class="secret reveal" onclick="showSecret()">
+
+    <div class="label">A SECRET MESSAGE</div>
+
+    <h3>في رسالة مخبّاية إلك...</h3>
+
+    <p>اضغطي هون واكتشفي شو مخبيلك عبود</p>
+
+    <div id="secretMessage">
+      لو تعرفي قديش مرات ببتسم لحالي
+      لما أتذكر موقف إلنا...
+      كان زمانك عرفتي إنك ساكنة بقلبي
+      أكثر مما بتتخيلي.
+      <br><br>
+      وإنتِ أحلى تفصيل بحكايتي. ❤️
+    </div>
+
+  </div>
+
+  <!-- عداد الأيام -->
+  <div class="counter-box reveal">
+
+    <h3>كل يوم وإنتِ بقلبي</h3>
+
+    <div class="counter" id="days">♡</div>
+
+    <p>يوم من بداية حكايتنا الجميلة</p>
+
+  </div>
+
+</section>
+
+<!-- النهاية -->
+<section class="final">
+
+  <div class="label">THE LAST SCENE</div>
+
+  <h2>فطوم...</h2>
+
+  <p>
+    لو رجع فيني الزمن،
+    ورجعت لنفس أول مشوار وصلتك فيه على مدرستك،
+    بتعرفي شو رح أعمل؟
+    <br><br>
+    رح أختار إني أعيش هالحكاية معك من جديد.
+    <br><br>
+    لأنك مش بس ذكرى حلوة...
+    إنتِ الحاضر اللي بحبه، والمستقبل اللي بتمنى نعيشه سوا.
+  </p>
+
+  <div class="gold-line"></div>
+
+  <h2>لسه بتختاريني يا فطوم؟</h2>
+
+  <div class="buttons">
+
+    <button class="yes" onclick="sayYes()">
+      أكيد يا عبود ❤️
+    </button>
+
+    <button class="think" id="thinkBtn">
+      بدي أفكر شوي
+    </button>
+
+  </div>
+
+</section>
+
+<footer>
+  فيلم من تأليف قلب عبود...
+  <br><br>
+  <span>إلى فطوم، بطلة كل الحكايات ❤️</span>
+</footer>
+
+<!-- النافذة -->
+<div id="result">
+
+  <div class="result-card">
+
+    <div style="font-size:45px;color:#d8b66d">✦</div>
+
+    <h2 id="resultTitle">أحلى نهاية لفيلمنا!</h2>
+
+    <p id="resultText">
+      هيك بدي إياكي دايمًا،
+      مبسوطة ومرتاحة وقريبة من قلبي.
+      <br><br>
+      بحبك يا فطوم.
+      <br>
+      عبود ❤️
+    </p>
+
+    <button class="close" onclick="closeResult()">
+      ارجعي للقصة
+    </button>
+
+  </div>
+
+</div>
+
+<script>
+
+// النجوم
+const stars = document.getElementById('stars');
+
+for(let i=0; i<120; i++) {
+  const star = document.createElement('div');
+  star.className = 'star';
+  star.style.left = Math.random()*100 + '%';
+  star.style.top = Math.random()*100 + '%';
+  star.style.width = (Math.random()*3+1)+'px';
+  star.style.height = star.style.width;
+  star.style.animationDelay = Math.random()*4+'s';
+  stars.appendChild(star);
+}
+
+// ظهور المشاهد
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+},{threshold:0.12});
+
+document.querySelectorAll('.reveal').forEach(el=>{
+  observer.observe(el);
+});
+
+// الرسالة السرية
+function showSecret() {
+  const message = document.getElementById('secretMessage');
+
+  message.style.display = 'block';
+
+  message.scrollIntoView({
+    behavior:'smooth',
+    block:'nearest'
+  });
+}
+
+// عداد الأيام
+// عدّل التاريخ إلى يوم بداية علاقتكم
+// الصيغة: سنة، شهر (يبدأ من صفر)، يوم
+const loveStart = new Date(2026, 6, 13);
+
+function updateCounter() {
+  const today = new Date();
+
+  const diff = today - loveStart;
+
+  const days = Math.floor(diff / (1000*60*60*24));
+
+  document.getElementById('days').innerText =
+    days >= 0 ? days + ' يوم' : 'قريبًا ❤️';
+}
+
+updateCounter();
+
+// قلوب متطايرة
+function createHeart() {
+  const heart = document.createElement('div');
+
+  heart.className = 'floating';
+
+  heart.innerHTML = ['♥','♡','✦','❤'][
+    Math.floor(Math.random()*4)
+  ];
+
+  heart.style.color = '#d8b66d';
+  heart.style.left = Math.random()*100+'vw';
+  heart.style.fontSize = (Math.random()*20+15)+'px';
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>heart.remove(),5000);
+}
+
+// جوابها
+function sayYes() {
+
+  document.getElementById('resultTitle').innerText =
+    'أحلى نهاية لفيلمنا! ❤️';
+
+  document.getElementById('resultText').innerHTML =
+    'هيك بدي إياكي دايمًا، مبسوطة ومرتاحة وقريبة من قلبي.<br><br>بحبك يا فطوم.<br>عبود ❤️';
+
+  document.getElementById('result').style.display='flex';
+
+  for(let i=0;i<35;i++) {
+    setTimeout(createHeart,i*100);
+  }
+}
+
+// زر التفكير الهارب
+const thinkBtn = document.getElementById('thinkBtn');
+
+function escapeButton() {
+
+  const margin = 15;
+
+  const maxX = window.innerWidth - thinkBtn.offsetWidth - margin;
+  const maxY = window.innerHeight - thinkBtn.offsetHeight - margin;
+
+  const x = Math.random()*Math.max(0,maxX);
+  const y = Math.random()*Math.max(0,maxY);
+
+  thinkBtn.style.position = 'fixed';
+  thinkBtn.style.left = x+'px';
+  thinkBtn.style.top = y+'px';
+  thinkBtn.style.zIndex = '99';
+}
+
+thinkBtn.addEventListener('mouseenter',escapeButton);
+
+thinkBtn.addEventListener('touchstart',function(e){
+  e.preventDefault();
+  escapeButton();
+},{passive:false});
+
+// إغلاق النافذة
+function closeResult() {
+  document.getElementById('result').style.display='none';
+}
+
+// مؤثرات بسيطة
+setInterval(createHeart,3000);
+
+</script>
+
+</body>
+</html>
